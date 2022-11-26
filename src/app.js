@@ -1,6 +1,7 @@
 const express = require('express')
 
 const db = require('./utils/database')
+const quoteRouter = require('./quotes/quotes.router')
 
 const port = 9000
 const app = express();
@@ -23,6 +24,8 @@ app.get('/', (req, res) => {
     });
 });
 
+
+app.use('/api/v1', quoteRouter)
 
 
 
